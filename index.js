@@ -96,14 +96,18 @@ drawCircleButton.addEventListener("click", function () {
   }
 });
 
-//redraw the canvas
+/**
+*redrawCanvas will help to redraw the canvas based on the movement of circles or adding circles
+*/
 function redrawCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (const circle of circlesMap.values()) {
     circle.draw(ctx);
   }
 }
-// Get mouse position relative to canvas
+/*
+*Get mouse position relative to canvas
+*/
 function getMousePos(event) {
   const rect = canvas.getBoundingClientRect();
   const scaleX = canvas.width / rect.width;
